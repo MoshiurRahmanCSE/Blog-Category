@@ -1,0 +1,84 @@
+.bg-primary {
+    background-color: #e3f2fd !important;
+    padding: 12px;
+}
+h2{
+    color: #000;
+}
+.file{
+    margin-top: 200px;
+
+}
+button {
+    padding: 8px;
+    font-size: 18px;
+}
+.nav-pills .nav-link {
+    color: #000;
+}
+.nav-pills .nav-link:hover, .nav-link-wrap a:hover{
+    color: #fff;
+}
+.align-items-center{
+    background: #D8BFD8;
+}
+.form{
+    margin-top: 30px;
+}
+.col-xl-10{
+    padding-top: 15px;
+}
+.d-title{
+    border-top: 2px solid #2f6664;
+    border-bottom: 1px solid #b2b2b2;
+    margin-top: 15px;
+}
+.details-header a{
+    font-size: 22px;
+    text-decoration: none;
+    color: #000;
+    margin: 5px;
+}
+/* .left-details{
+    background: blueviolet;
+}
+.middle-details{
+    background: burlywood;
+}
+.right-details{
+    background: cornflowerblue;
+} */
+.left-details{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.left-details img {
+    padding-bottom: 8px;
+}
+.menu-bar a {
+    text-decoration: none;
+    color: #000;
+    padding: 8px;
+    font-size: 18px;
+    margin-right: 16px;
+}
+.menu-bar a:hover{
+    color: #faa61a;
+}
+.title h2 {
+    margin-left: 10px;
+    font-size: 35px;
+}
+.header-menu {
+    padding: 10px;
+}
+.details-header {
+    font-size: 20px;
+    margin: 5px;
+}
+.delete button{
+    margin-left: 505px;
+}
+.delete .input {
+    margin-top: 15px;
+}
