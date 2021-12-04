@@ -22,17 +22,17 @@
     <div class="update">
         <div class="container">
             <div class="row">
-                <div class="heading">
+                <div class="heading d-flex justify-content-center">
                     <h2>Update Sports Blog</h2>
                 </div>
-                <div class="col-md-3">
-                    <div class="menu-bar">
+                <div class="col-md-2">
+                    <div class="update-menu">
                         <a href="blogInsert.php">Blog Insert</a>
                         <br><br>
                         <a href="result.php">Blog List</a>
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-10">
                     <div class="input">
                         <div class="form">
                             <form method="POST" action="updateaction.php" enctype="multipart/form-data">  
@@ -85,8 +85,7 @@
                                             <img src="photo/<?php echo $row["image"];?>" height="100" width="100" alt="<?php echo $row["image"];?>" title="<?php echo $row["image"];?>"/>
                                                 <input class="form-control" type="file" id="image" name="image">
                                             </div>
-                                        </div>
-                                        
+                                        </div>                                       
                                         <div class="d-grid">
                                             <input type="hidden" name="id" value="<?php echo $blogid;?>">
                                             <button type="submit" name="submit" value="update">Update</button>   

@@ -27,10 +27,6 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <div class="container-fluid d-flex justify-content-center">
                 <h2>Sports Blog</h2>
-                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -48,7 +44,6 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Cricket</a></li>
                                 <li><a class="dropdown-item" href="#">Football</a></li>
-                                <li><a class="dropdown-item" href="#">Hocky</a></li>
                                 <li><a class="dropdown-item" href="#">Others</a></li>
                             </ul>
                         </li>
@@ -62,10 +57,6 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form> -->
                 </div>
             </div>
         </nav>
@@ -73,31 +64,21 @@
     <div class="delete">
         <div class="container">
             <div class="row">
-                <!-- <div class="heading">
-                    <h2>Sports Blog</h2>
-                </div>
-                <div class="col-md-3">
-                    <div class="menu-bar">
-                        <a href="blogInsert.php">Blog Insert</a>
-                        <br><br>
-                        <a href="result.php">Blog List</a>
-                    </div>
-                </div> -->
                 <div class="col-md-12">
                     <div class="input">
                         <div method="POST" action="result.php" enctype="multipart/form-data">
                             <div class="alert alert-danger  d-flex justify-content-center" role="alert">
                                 Are you sure want to delete..!
                             </div>
-                                <button type="submit" name="delete" class="<?php echo $row["blogid"];?>">Delete</button>
+                                <button type="delete" name="delete" class="<?php echo $row["blogid"];?>">Delete</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="javascript/text" src="js/popper.min.js"></script>
     <script type="javascript/text" src="js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>

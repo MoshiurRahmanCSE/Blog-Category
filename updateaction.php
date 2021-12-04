@@ -1,12 +1,10 @@
 <?php
   include_once("connect.php");
-
   // define variables and set to empty values
   $blogid = $blogTitle = $categoryid = $image = $shortDesc = $decription = $writerName = $sql = ""; $imgUpload=0;
 
   if (isset($_POST['submit'])){
     $blogid = $_POST['id'];
-    //echo $blogid; die();
     $blogTitle = $_POST['blogTitle'];
     $categoryid = $_POST['categoryid'];
     $shortDesc = $_POST['shortDesc'];
@@ -41,7 +39,7 @@
       if($imgUpload==1){$sql .= "image='".$file_name."',";}
       $sql .="writerName = '".$writerName."'
       WHERE blogid = '$blogid'";
-      //echo $sql; die();
+
       
       if (mysqli_query($conn, $sql)) {
         echo "New record updated successfully";

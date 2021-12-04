@@ -1,6 +1,9 @@
-.bg-primary {
+.bg-primary,.heading{
     background-color: #e3f2fd !important;
     padding: 12px;
+}
+h1{
+    font-size: 60px;
 }
 h2{
     color: #000;
@@ -19,13 +22,13 @@ button {
 .nav-pills .nav-link:hover, .nav-link-wrap a:hover{
     color: #fff;
 }
-.align-items-center{
+.align-items-center, .col-md-2{
     background: #D8BFD8;
 }
 .form{
     margin-top: 30px;
 }
-.col-xl-10{
+.col-xl-10 {
     padding-top: 15px;
 }
 .d-title{
@@ -39,15 +42,6 @@ button {
     color: #000;
     margin: 5px;
 }
-/* .left-details{
-    background: blueviolet;
-}
-.middle-details{
-    background: burlywood;
-}
-.right-details{
-    background: cornflowerblue;
-} */
 .left-details{
     margin-top: 15px;
     margin-bottom: 15px;
@@ -55,14 +49,17 @@ button {
 .left-details img {
     padding-bottom: 8px;
 }
-.menu-bar a {
+.menu-bar a,.update-menu a {
     text-decoration: none;
     color: #000;
     padding: 8px;
     font-size: 18px;
     margin-right: 16px;
 }
-.menu-bar a:hover{
+.update-menu {
+    margin-top: 25px;
+}
+.menu-bar a:hover, .update-menu a:hover{
     color: #faa61a;
 }
 .title h2 {
@@ -81,4 +78,40 @@ button {
 }
 .delete .input {
     margin-top: 15px;
+}
+.footer{
+    background: #e3f2fd;
+}
+.lower{
+    padding: 15px;
+    color: #aaa;
+}
+.details .title {
+    font-size: 27px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.details p{
+    font-size: 18px;
+    margin: 10px 0 20px;
+    line-height: 1.85;
+}
+.publish {
+    font-size: 14px;
+    margin-bottom: 14px;
+    margin-top: 10px;
+}
+.details {
+    padding: 10px;
+}
+.details a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #000;
+    line-height: 1.85;
+}
+.breadcrumb-item.active {
+    color: #000;
+    font-size: 22px;
+    font-weight: bold;
 }

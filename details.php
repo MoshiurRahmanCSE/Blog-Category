@@ -1,10 +1,20 @@
 <?php 
     include_once("connect.php");
     if(isset($_GET["id"])){
-        $categoryid = $_GET["id"];
+        $blogid = $_GET["id"];
+        //echo $blogid;die();
     }
-    $sqlCat = "SELECT categoryid, categoryname FROM categorydb WHERE status = 1";
-    $res = mysqli_query($conn, $sqlCat);
+    $sql = "SELECT blogid, categoryid, blogTitle, image, shortDesc, decription, writerName FROM blogcategorydb WHERE blogid = $blogid";
+    //echo $sql; die();
+    $result = mysqli_query($conn, $sql);
+    $row1 = mysqli_fetch_assoc($result);
+    $categoryid = $row1["categoryid"];
+    $blogTitle = $row1["blogTitle"];
+    $image = $row1["image"];
+    $shortDesc = $row1["shortDesc"];
+    $decription = $row1["decription"];
+    $writerName = $row1["writerName"];
+    //echo $categoryid;die();
 ?>
 <!DOCTYPE HTML>  
 <html>
@@ -24,16 +34,18 @@
             <div class="row">
                 <div class="col-xl-8">
                     <div class="title">
-                        <h2> Category Blog</h2>
+                        <h2>Blog Details</h2>
                     </div>
                 </div>
                 <div class="col-xl-4">
                     <div class="menu-bar d-flex justify-content-end">
                         <a href="home.php">Home</a>
                         <a href="#">Contact</a>
-                        <?php while($cat = mysqli_fetch_assoc($res)){ ?>
-                            <a href="category.php?id=<?php echo $cat["categoryid"];?>"><?php echo $cat["categoryname"];?></a>
-                        <?php } ?>
+                        <?php
+                            $sql1 = "SELECT categoryid, categoryname FROM categorydb WHERE categoryid = $categoryid";
+                            $res = mysqli_query($conn, $sql1);
+                            $row2 = mysqli_fetch_assoc($res);
+                        ?>
                     </div>
                 </div>
             </div>
@@ -45,18 +57,18 @@
             <div class="col-xl-12">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="d-title ">
+                        <div class="d-title">
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="details-header">
                                         <?php                                           
                                             $sql1 = "SELECT categoryid, categoryname FROM categorydb where categoryid = $categoryid";
-                                            $result1 = mysqli_query($conn, $sql1);
-                                            $row1 = mysqli_fetch_assoc($result1);
+                                            $res = mysqli_query($conn, $sql1);
+                                            $row = mysqli_fetch_assoc($res);
                                         ?>
                                         <nav aria-label="breadcrumb">
                                             <ol class="breadcrumb">
-                                                <li class="breadcrumb-item active" aria-current="page"><?php echo $row1["categoryname"];?></li>
+                                                <li class="breadcrumb-item active" aria-current="page"><?php echo $row["categoryname"];?></li>
                                             </ol>
                                         </nav>
                                     </div>
@@ -64,39 +76,26 @@
                             </div>
                         </div>
                         <div class="row">
-                            <?php
-                                $sql = "SELECT blogid, categoryid, blogTitle, image, shortDesc, writerName FROM blogcategorydb WHERE categoryid = $categoryid";
-                                $result = mysqli_query($conn, $sql);
-                                                                
-                                if (mysqli_query($conn, $sql)) {
-                                    // echo "New record created successfully";
-                                } else {
-                                    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-                                }
-                            ?>
-                            <?php
-                                if (mysqli_num_rows($result) > 0) {
-                                    // output data of each row    
-                                while($row = mysqli_fetch_assoc($result)) {
-                            ?>
-                            <div class="col-xl-4">
+                            
+                            <div class="col-xl-9">
                                 <div class="details">
-                                    <a href="details.php?id=<?php echo $row["blogid"];?>">
-                                        <img src="photos/<?php echo $row["image"];?>" height="100%" width="100%" alt="<?php echo $row["blogTitle"];?>" title="<?php echo $row["blogTitle"];?>"/>
-                                        <?php echo "". date("Y-m-d h:i:sa"); ?>
-                                        <br>
-                                        <b><?php echo $row["blogTitle"];?>
-                                        <br>
-                                        <?php echo $row["writerName"];?></b>
-                                        <br>
-                                        <?php echo $row["shortDesc"];?>
-                                    </a>                 
+                                    <a href="details.php?id=<?php echo $cat["blogid"];?>">
+                                        <div class="title">
+                                            <?php echo $blogTitle;?>
+                                        </div>
+                                        <div class="publish">
+                                            <?php echo $writerName;?> || <?php echo "". date("Y-m-d h:i:sa"); ?>
+                                        </div>
+                                        <div class="img d-flex justify-content-center">
+                                            <img src="photos/<?php echo $image;?>" height="100%" width="100%" alt="<?php echo $blogTitle;?>" title="<?php echo $blogTitle;?>"/>
+                                        </div>
+                                        <b><p><?php echo $shortDesc;?></p></b>
+                                        <p><?php echo $decription;?></p> 
+                                    </a>                               
                                 </div>
                             </div>
-                            <?php } }                                           
-                            else {
-                                echo "0 results";
-                            } ?>
+                           
+                            <div class="col-xl-3"></div>
                         </div>
                     </div>
                 </div>
